@@ -78,6 +78,26 @@ ul { list-style: none; padding: 0; }
 }
 .skip-link:focus { top: 12px; text-decoration: none; }
 
+/* ---- Promo bar (Caveman × Maestro pairing) ---- */
+.promo-bar {
+  border-top: 2px solid var(--accent);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(123, 123, 245, 0.10), rgba(18, 23, 34, 0.55));
+  font-size: var(--step--1);
+  line-height: 1.4;
+}
+.promo-bar__inner {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 4px 14px; padding-block: 8px; text-align: center;
+}
+.promo-bar__text { color: var(--muted); }
+.promo-bar__text strong { color: var(--text); font-weight: 700; }
+.promo-bar__stat { color: var(--accent); font-weight: 700; }
+.promo-bar__sep { color: var(--border); }
+.promo-bar__link { color: var(--accent-2); font-weight: 600; white-space: nowrap; }
+.promo-bar__link:hover { color: var(--text); text-decoration: underline; }
+@media (max-width: 480px) { .promo-bar__detail { display: none; } }
+
 /* ---- Layout ---- */
 .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: 20px; }
 section { padding-block: clamp(3rem, 8vw, 6rem); }
