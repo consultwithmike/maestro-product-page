@@ -1,0 +1,14 @@
+# Maestro orchestration state (runtime; git-ignored by convention)
+.maestro/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Scratch / temp
+_*.html
+_*.png
+scratch-*

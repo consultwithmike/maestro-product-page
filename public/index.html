@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maestro — a review-gated AI dev team for Claude Code</title>
+  <meta name="description" content="Maestro is a Claude Code plugin: a conductor-led team of specialist subagents that runs your task through strategy, architecture, implementation, and four independent verifiers with veto power — before any code ships." />
+  <meta name="theme-color" content="#0B0E14" />
+  <link rel="canonical" href="https://maestro.example.com/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Maestro — a review-gated AI dev team for Claude Code" />
+  <meta property="og:description" content="Hand it a story, task, or rough idea. A conductor-led team of specialist subagents ships a change reviewed the way a serious team reviews — with four independent verifiers who can send work back." />
+  <meta property="og:url" content="https://maestro.example.com/" />
+  <meta property="og:image" content="assets/calculator-expression.png" />
+  <meta property="og:image:alt" content="A calculator app Maestro built end-to-end from a 9-word request." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Maestro — a review-gated AI dev team for Claude Code" />
+  <meta name="twitter:description" content="A conductor-led team of specialist subagents for Claude Code: strategy, architecture, implementation, and four independent verifiers with veto power." />
+  <meta name="twitter:image" content="assets/calculator-expression.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#hero" aria-label="Maestro home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <line x1="9" y1="23" x2="24" y2="8" stroke="#F2B84B" stroke-width="2.6" stroke-linecap="round"/>
+          <circle cx="24" cy="8" r="2.6" fill="#F2B84B"/>
+          <circle cx="9" cy="23" r="1.6" fill="#7B7BF5"/>
+        </svg>
+        Maestro
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a class="navlink" href="#problem">Problem</a>
+        <a class="navlink" href="#team">Team</a>
+        <a class="navlink" href="#workflows">Workflows</a>
+        <a class="navlink" href="#proof">Proof</a>
+        <a class="btn btn-primary" href="#install">Install</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero-copy">
+          <span class="hero-eyebrow"><span class="dot" aria-hidden="true"></span> Claude Code plugin</span>
+          <h1 id="hero-title">Ship AI-written code that a <span class="grad">real team already reviewed</span>.</h1>
+          <p class="hero-sub">
+            <strong>Maestro</strong> is a conductor-led team of specialist subagents for Claude Code —
+            hand it a story, task, or rough idea and get back a change a real team already reviewed.
+          </p>
+          <ul class="hero-points" aria-label="What Maestro is, the problem it solves, and why you need it">
+            <li><span class="hp-label">What</span><span class="hp-text">A strategist, an architect, and an implementer — orchestrated as one team inside Claude Code.</span></li>
+            <li><span class="hp-label">Problem</span><span class="hp-text">Solo AI codegen ships unreviewed work, in one voice, straight to your branch.</span></li>
+            <li><span class="hp-label">Why</span><span class="hp-text"><strong>Four independent verifiers</strong> — code review, security, QA, and UX — can each send the work back before it ships.</span></li>
+          </ul>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#install">Install Maestro</a>
+            <a class="btn btn-ghost" href="#proof">See a real run</a>
+          </div>
+          <div class="hero-chips" aria-label="Two entry points">
+            <span class="chip"><span class="chip-label">build</span> <code>/maestro</code></span>
+            <span class="chip whatif"><span class="chip-label">feasibility</span> <code>/what-if</code></span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="term">
+            <div class="term-bar"><span class="tdot"></span><span class="tdot"></span><span class="tdot"></span><span class="term-title">maestro</span></div>
+            <div class="term-body">
+              <p class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">/maestro</span> "add rate limiting to the API"</p>
+              <p class="term-line term-ok">strategy · architecture · implementation</p>
+              <p class="term-line">running four independent verifiers…</p>
+              <div class="term-chips"><span class="vpill">Code</span><span class="vpill">Security</span><span class="vpill">QA</span><span class="vpill">UX</span></div>
+              <p class="term-line term-done">arbitration → done · reviewed &amp; gated</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROBLEM ============ -->
+    <section id="problem" aria-labelledby="problem-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Why you need it</span>
+          <h2 id="problem-title">One model writing code is not a team shipping code.</h2>
+          <p>The fastest way to accumulate risk is to let unreviewed generation flow straight to your branch. Maestro puts a review gate — with real, independent roles — between the idea and the diff.</p>
+        </div>
+
+        <div class="contrast">
+          <div class="card before reveal">
+            <h3><span class="tag">Before</span> Solo AI codegen</h3>
+            <ul class="checklist">
+              <li>
+                <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="#F0616D" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+                <span><strong>Unreviewed.</strong> Output goes to your branch with no independent gate.</span>
+              </li>
+              <li>
+                <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="#F0616D" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+                <span><strong>One voice.</strong> The same model that wrote it also judges it — no security, QA, or UX perspective.</span>
+              </li>
+              <li>
+                <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="#F0616D" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+                <span><strong>Ships silently.</strong> Nothing surfaces what got skipped, deferred, or quietly assumed.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card after reveal">
+            <h3><span class="tag">With Maestro</span> A review-gated team</h3>
+            <ul class="checklist">
+              <li>
+                <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="#46C08D" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="8 12.5 11 15.5 16 9"/></svg>
+                <span><strong>Review-gated.</strong> Four independent verifiers with veto power stand between intent and shipped code.</span>
+              </li>
+              <li>
+                <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="#46C08D" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="8 12.5 11 15.5 16 9"/></svg>
+                <span><strong>Multi-role.</strong> Intent, architecture, implementation, code review, security, QA, and UX — each done by a specialist.</span>
+              </li>
+              <li>
+                <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="#46C08D" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="8 12.5 11 15.5 16 9"/></svg>
+                <span><strong>Safety-bounded &amp; honest.</strong> Retries are capped; nothing ships silently — every deferral is reported with its rationale.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THE TEAM ============ -->
+    <section id="team" aria-labelledby="team-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">The team</span>
+          <h2 id="team-title">A conductor and seven specialists.</h2>
+          <p>One skill conducts the room; seven role subagents do the work. Four of them can send the work back.</p>
+        </div>
+
+        <!-- Orchestrator card -->
+        <div class="orchestrator-card reveal">
+          <span class="role-pill">Conductor · a Skill, not an 8th agent</span>
+          <h3>The Orchestrator</h3>
+          <p class="lede">
+            In Claude Code, <strong>a subagent cannot invoke other subagents</strong> — only the
+            main session can. So the conductor is <strong>not</strong> an eighth agent. It is a
+            <strong>Skill run by the main session</strong>, which can spawn the seven role
+            subagents. That is the only shape that actually runs — and it stays portable, versioned,
+            and testable.
+          </p>
+          <div class="orchestrator-grid">
+            <ul class="orchestrator-does">
+              <li><span class="bullet" aria-hidden="true">▹</span><span><b>Routes</b> work through the state machine, stage by stage.</span></li>
+              <li><span class="bullet" aria-hidden="true">▹</span><span><b>Arbitrates</b> ties when verifiers conflict.</span></li>
+              <li><span class="bullet" aria-hidden="true">▹</span><span><b>Curates</b> exactly the context each agent needs — never a raw dump.</span></li>
+              <li><span class="bullet" aria-hidden="true">▹</span><span><b>Disposes</b> every finding: block, backlog, or dismiss.</span></li>
+              <li><span class="bullet" aria-hidden="true">▹</span><span><b>Enforces</b> the retry ceiling and accounts tokens (observability only).</span></li>
+              <li><span class="bullet" aria-hidden="true">▹</span><span><b>Writes</b> the end-of-run summary for the human.</span></li>
+            </ul>
+            <div class="never-writes">
+              <p><b>It never writes or reviews code.</b> The verifiers are read-only and
+              <em>return</em> structured verdicts; the orchestrator is the <b>sole writer</b> of
+              state, so running the four verifiers in parallel never races.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Builders group -->
+        <div class="group-label reveal">
+          <span class="role-pill pill-builder">Builders · no veto</span>
+          <h3>They move the work forward</h3>
+          <span class="note">Produce the requirement, the design, and the change.</span>
+        </div>
+        <ul class="agent-grid reveal">
+          <li class="agent-card">
+            <div class="agent-top">
+              <h4>Strategist</h4>
+              <svg class="agent-icon" viewBox="0 0 32 32" fill="none" stroke="#7B7BF5" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="16" r="11"/><path d="M16 5v22M5 16h22"/></svg>
+            </div>
+            <p class="agent-role">Knows and verifies the requirement — turns a request into a testable requirement with explicit acceptance criteria, or bounces it back to the human when it is genuinely ambiguous.</p>
+            <div class="agent-flags"><span class="flag novote">No veto</span></div>
+          </li>
+          <li class="agent-card">
+            <div class="agent-top">
+              <h4>Principal Engineer</h4>
+              <svg class="agent-icon" viewBox="0 0 32 32" fill="none" stroke="#7B7BF5" stroke-width="1.6" aria-hidden="true"><rect x="6" y="6" width="20" height="20" rx="2"/><path d="M6 13h20M13 13v13"/></svg>
+            </div>
+            <p class="agent-role">The architect — designs the smallest, cleanest approach that satisfies the requirement and fits the existing codebase. Read-only; does not write the change.</p>
+            <div class="agent-flags"><span class="flag novote">No veto</span></div>
+          </li>
+          <li class="agent-card">
+            <div class="agent-top">
+              <h4>Staff Engineer <span class="sr-only">(Implementer)</span></h4>
+              <svg class="agent-icon" viewBox="0 0 32 32" fill="none" stroke="#7B7BF5" stroke-width="1.6" aria-hidden="true"><path d="M11 8L5 16l6 8M21 8l6 8-6 8"/></svg>
+            </div>
+            <p class="agent-role">The Implementer — writes the actual change following the architecture, and on a rework pass fixes only the specific findings routed to it. <strong>The only Maestro agent that writes code.</strong></p>
+            <div class="agent-flags"><span class="flag novote">No veto</span><span class="flag writes">Writes code</span></div>
+          </li>
+        </ul>
+
+        <!-- Verifiers group -->
+        <div class="group-label reveal">
+          <span class="role-pill pill-veto">Verifiers · veto · read-only</span>
+          <h3>They can send the work back</h3>
+          <span class="note">Four independent gates. Any one can REJECT with structured findings.</span>
+        </div>
+        <ul class="agent-grid verifier-grid reveal">
+          <li class="agent-card is-verifier">
+            <div class="agent-top">
+              <h4>Code Reviewer</h4>
+              <svg class="agent-icon" viewBox="0 0 32 32" fill="none" stroke="#F97362" stroke-width="1.6" aria-hidden="true"><path d="M11 9L5 16l6 7M21 9l6 7-6 7"/><line x1="18" y1="6" x2="14" y2="26"/></svg>
+            </div>
+            <p class="agent-role">Enforces KISS and best practices, and verifies the requirement was actually met — including, on rework, that the exact routed findings were fixed.</p>
+            <div class="agent-flags"><span class="flag veto">Veto · can send work back</span><span class="flag readonly">Read-only</span></div>
+          </li>
+          <li class="agent-card is-verifier">
+            <div class="agent-top">
+              <h4>Security Engineer</h4>
+              <svg class="agent-icon" viewBox="0 0 32 32" fill="none" stroke="#F97362" stroke-width="1.6" aria-hidden="true"><path d="M16 4l10 4v7c0 6-4 11-10 13C10 26 6 21 6 15V8z"/></svg>
+            </div>
+            <p class="agent-role">Best practices, compliance, and no new risk — injection, authn/authz gaps, secret handling, unsafe defaults, dependency risk. May run scanners.</p>
+            <div class="agent-flags"><span class="flag veto">Veto · can send work back</span><span class="flag readonly">Read-only</span></div>
+          </li>
+          <li class="agent-card is-verifier">
+            <div class="agent-top">
+              <h4>QA Engineer</h4>
+              <svg class="agent-icon" viewBox="0 0 32 32" fill="none" stroke="#F97362" stroke-width="1.6" aria-hidden="true"><path d="M9 16l4 4 10-11"/><rect x="5" y="5" width="22" height="22" rx="3"/></svg>
+            </div>
+            <p class="agent-role">Verifies the change against the requirement's acceptance criteria — tracing each criterion to evidence, checking edge cases and error paths, and running the test suite where possible.</p>
+            <div class="agent-flags"><span class="flag veto">Veto · can send work back</span><span class="flag readonly">Read-only</span></div>
+          </li>
+          <li class="agent-card is-verifier">
+            <div class="agent-top">
+              <h4>UX Engineer</h4>
+              <svg class="agent-icon" viewBox="0 0 32 32" fill="none" stroke="#F97362" stroke-width="1.6" aria-hidden="true"><circle cx="16" cy="16" r="11"/><path d="M11 20c1.5 2 3 3 5 3s3.5-1 5-3"/><circle cx="12" cy="13" r="1.3" fill="#F97362" stroke="none"/><circle cx="20" cy="13" r="1.3" fill="#F97362" stroke="none"/></svg>
+            </div>
+            <p class="agent-role">World-class user experience — interaction flow, clarity, accessibility, error/empty/loading states, and visual consistency — verifying the change delivers the user-facing intent.</p>
+            <div class="agent-flags"><span class="flag veto">Veto · can send work back</span><span class="flag readonly">Read-only</span></div>
+          </li>
+        </ul>
+
+        <div class="legend reveal">
+          <span class="swatch"><span class="box" style="background:#7B7BF5"></span> Builders move the work forward — <b style="color:var(--text)">no veto</b>.</span>
+          <span class="swatch"><span class="box" style="background:#F97362"></span> Verifiers are read-only and <b style="color:var(--text)">can send work back (veto)</b>.</span>
+          <span class="swatch"><span class="box" style="background:#F2B84B"></span> The Orchestrator is a Skill — it is the gate, not a role agent.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WORKFLOWS ============ -->
+    <section id="workflows" aria-labelledby="workflows-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">How it works</span>
+          <h2 id="workflows-title">Two entry points. Same team.</h2>
+          <p>Ask <em>“is this even possible?”</em> before you spend a build — or run the full, review-gated pipeline. Pick by what you need right now.</p>
+        </div>
+
+        <div class="wf-intro reveal">
+          <div class="card">
+            <h3>Build — when you’re ready to ship</h3>
+            <p>Runs the whole pipeline: intent → architecture → implementation → four parallel verifiers → arbitration, then done, rework, or an escalation to you. Use it when you want a reviewed change.</p>
+            <div class="when">/maestro "…"</div>
+          </div>
+          <div class="card">
+            <h3>What-if — when you’re still deciding</h3>
+            <p>Runs only the front half — strategist then architect — and <strong>stops before any code</strong>. Returns an honest feasibility verdict with cited evidence. Use it to assess before you build.</p>
+            <div class="when">/what-if "…"</div>
+          </div>
+        </div>
+
+        <!-- Diagram A: Build pipeline -->
+        <div class="diagram-block reveal">
+          <div class="diagram-title">
+            <h3>The build pipeline</h3>
+            <code>/maestro</code>
+          </div>
+          <p class="diagram-sub">A one-way state machine. Every stage is a hand-off through the conductor; the four verifiers run in parallel, and arbitration decides the outcome.</p>
+
+          <div class="flow" role="img" aria-label="Build pipeline: Intake, then Strategy, then Architecture, then Implementation, then Verification by four parallel verifiers, then Arbitration, which branches to Done, Rework, or Escalated to human. Rework routes targeted findings back to Implementation, bounded at retry max 3.">
+            <ol class="flow-inner">
+              <li class="node node-start"><span class="node-name">Intake</span><span class="node-desc">Requirement stored verbatim &amp; immutable</span></li>
+              <li class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></li>
+              <li class="node"><span class="node-name">Strategy</span><span class="node-desc">Strategist scopes acceptance criteria</span></li>
+              <li class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></li>
+              <li class="node"><span class="node-name">Architecture</span><span class="node-desc">Principal engineer designs the approach</span></li>
+              <li class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></li>
+              <li class="node"><span class="node-name">Implementation</span><span class="node-desc">Staff engineer writes the change</span></li>
+              <li class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></li>
+              <li class="node node-verify">
+                <span class="node-name">Verification</span>
+                <div class="verify-chips" aria-hidden="true">
+                  <span class="vchip">Code</span><span class="vchip">Security</span>
+                  <span class="vchip">QA</span><span class="vchip">UX</span>
+                </div>
+                <span class="parallel">four verifiers, in parallel</span>
+              </li>
+              <li class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></li>
+              <li class="node"><span class="node-name">Arbitration</span><span class="node-desc">Conductor disposes findings &amp; decides</span></li>
+              <li class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></li>
+              <li class="outcomes">
+                <span class="outcome done"><svg class="oc-icon" viewBox="0 0 24 24" fill="none" stroke="#46C08D" stroke-width="2" aria-hidden="true"><polyline points="5 12 10 17 19 7"/></svg><span class="oc-name">DONE</span></span>
+                <span class="outcome rework"><svg class="oc-icon" viewBox="0 0 24 24" fill="none" stroke="#E5B567" stroke-width="2" aria-hidden="true"><path d="M4 9a8 8 0 0 1 14-3l2 2M20 15a8 8 0 0 1-14 3l-2-2"/><path d="M20 4v4h-4M4 20v-4h4"/></svg><span class="oc-name">REWORK</span></span>
+                <span class="outcome escalate"><svg class="oc-icon" viewBox="0 0 24 24" fill="none" stroke="#F0616D" stroke-width="2" aria-hidden="true"><path d="M12 4l9 16H3z"/><line x1="12" y1="10" x2="12" y2="15"/><circle cx="12" cy="18" r="0.6" fill="#F0616D"/></svg><span class="oc-name">ESCALATED_TO_HUMAN</span></span>
+              </li>
+            </ol>
+          </div>
+          <p class="loop-caption">
+            <b>Bounded retry loop.</b> A <b>REWORK</b> routes only the targeted findings back to the
+            implementer — and, next pass, to the specific verifiers who need to confirm the fix.
+            It’s bounded at <code>retry.max = 3</code> (default); when the ceiling is hit, the
+            conductor stops looping and escalates the <em>cause</em> to you instead of thrashing
+            forever.
+          </p>
+        </div>
+
+        <!-- Diagram B: What-if -->
+        <div class="diagram-block reveal">
+          <div class="diagram-title">
+            <h3>The what-if feasibility flow</h3>
+            <code>/what-if</code>
+          </div>
+          <p class="diagram-sub">Only the strategist and principal engineer are ever invoked. It can never reach implementation or verification, and it never touches your source.</p>
+
+          <div class="flow" role="img" aria-label="What-if flow: Strategy by the strategist, then Architecture by the principal engineer, then a hard STOP before any code — no implementer, no verifiers — then a feasibility verdict of FEASIBLE, FEASIBLE_WITH_CAVEATS, or INFEASIBLE.">
+            <ol class="flow-inner">
+              <li class="node node-start"><span class="node-name">Strategy</span><span class="node-desc">Strategist frames it as a feasibility problem</span></li>
+              <li class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></li>
+              <li class="node"><span class="node-name">Architecture</span><span class="node-desc">Principal engineer studies the approach; risks become caveats</span></li>
+              <li class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></li>
+              <li class="stop-node">
+                <span class="node-name"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0616D" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="8" y1="12" x2="16" y2="12"/></svg> STOP before any code</span>
+                <span class="node-desc">No implementer. No verifiers. Never touches source.</span>
+              </li>
+              <li class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></li>
+              <li class="node"><span class="node-name">Verdict</span><span class="node-desc">Honest feasibility call with cited evidence</span></li>
+            </ol>
+          </div>
+
+          <div class="verdicts">
+            <div class="verdict feasible">
+              <span class="v-name"><svg class="v-icon" viewBox="0 0 24 24" fill="none" stroke="#46C08D" stroke-width="2.4" aria-hidden="true"><polyline points="5 12 10 17 19 7"/></svg> FEASIBLE</span>
+              <span class="v-desc">Buildable within existing patterns — no blocker.</span>
+            </div>
+            <div class="verdict caveats">
+              <span class="v-name"><svg class="v-icon" viewBox="0 0 24 24" fill="none" stroke="#E5B567" stroke-width="2.4" aria-hidden="true"><path d="M12 8v5"/><circle cx="12" cy="16.5" r="0.7" fill="#E5B567"/><circle cx="12" cy="12" r="9"/></svg> FEASIBLE_WITH_CAVEATS</span>
+              <span class="v-desc">Buildable, but a named constraint conditions it.</span>
+            </div>
+            <div class="verdict infeasible">
+              <span class="v-name"><svg class="v-icon" viewBox="0 0 24 24" fill="none" stroke="#F0616D" stroke-width="2.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="8" y1="8" x2="16" y2="16"/></svg> INFEASIBLE</span>
+              <span class="v-desc">Depends on data or capability the codebase can’t currently provide.</span>
+            </div>
+          </div>
+          <p class="promo-caption">
+            Every verdict carries reasoning and <b>at least one cited evidence ref</b> — an accurate
+            <b>INFEASIBLE</b> is the point, and the verdict is never inflated. A non-INFEASIBLE study
+            is <b>promotable</b> with <code>/maestro run WHATIF-&lt;id&gt;</code>, which re-runs the
+            <b>full</b> pipeline (seeded as prior art, nothing skipped). An <b>INFEASIBLE</b> study is
+            refused.
+          </p>
+        </div>
+
+        <!-- Arbitration panel -->
+        <div class="arb-panel reveal" aria-labelledby="arb-title">
+          <div class="section-head">
+            <span class="eyebrow">Arbitration</span>
+            <h2 id="arb-title" style="font-size:var(--step-2)">How findings get disposed — and when it stops to ask you.</h2>
+          </div>
+          <div class="fates">
+            <div class="fate block">
+              <h4>BLOCK</h4>
+              <p>Must be fixed before the task proceeds. Added to the rework reasons routed back to the implementer.</p>
+            </div>
+            <div class="fate backlog">
+              <h4>BACKLOG</h4>
+              <p>Valid but out of scope — filed as a new standalone task with a rationale, and the human is notified. The task proceeds.</p>
+            </div>
+            <div class="fate dismiss">
+              <h4>DISMISS</h4>
+              <p>Rare — not valid or not actionable, requires a clear rationale.
+              <span class="never">Security findings may never be dismissed — only BLOCK or BACKLOG.</span></p>
+            </div>
+          </div>
+
+          <div class="tiebreak card">
+            <h3 style="font-size:var(--step-1)">Tie-break priority</h3>
+            <p class="lede">When verifiers conflict, the conductor re-reads the requirement and weighs by this default severity order — unless the requirement itself states otherwise:</p>
+            <div class="priority">
+              <span class="prio-item">security</span>
+              <span class="prio-gt" aria-hidden="true">&gt;</span>
+              <span class="prio-item">correctness</span>
+              <span class="prio-gt" aria-hidden="true">&gt;</span>
+              <span class="prio-item">KISS / maintainability</span>
+              <span class="prio-gt" aria-hidden="true">&gt;</span>
+              <span class="prio-item">UX polish</span>
+            </div>
+          </div>
+
+          <div class="tiebreak">
+            <h3 style="font-size:var(--step-1)">It stops and asks you when:</h3>
+            <ul class="escalate-list">
+              <li><span class="num" aria-hidden="true">1</span><span>The <strong>retry ceiling</strong> would be exceeded — stop thrashing, hand off.</span></li>
+              <li><span class="num" aria-hidden="true">2</span><span>A <strong>high-severity security finding can’t be safely remediated</strong> — it recurs after rework, or the fix is contentious.</span></li>
+              <li><span class="num" aria-hidden="true">3</span><span>Verifiers <strong>disagree about what the requirement means</strong> — that’s a product decision, not one to arbitrate on severity.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROOF ============ -->
+    <section id="proof" aria-labelledby="proof-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Proof it works</span>
+          <h2 id="proof-title">Don’t take it on faith — read a real run.</h2>
+          <p>Eight full end-to-end transcripts capture every stage, each verifier’s verdict, how findings were disposed, rework loops, and independently re-run test output.</p>
+        </div>
+
+        <div class="proof-shots reveal">
+          <figure class="shot">
+            <img src="assets/calculator-dark.png" width="300" alt="A Windows-style calculator app in dark theme, built by the Maestro pipeline." loading="lazy" />
+            <figcaption>Dark theme — Windows 11 Standard fidelity.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/calculator-expression.png" width="300" alt="The same Maestro-built calculator showing the expression 157 + 10 evaluating to 167." loading="lazy" />
+            <figcaption>Showing <span style="font-family:var(--font-mono)">157 + 10 = 167</span>.</figcaption>
+          </figure>
+        </div>
+        <p class="proof-story reveal">
+          <strong>Run 005</strong> took a <strong>9-word ask</strong> — “build a visual calculator
+          like the Windows one” — to a shipped, self-contained working app: via a multi-turn
+          strategist↔principal <strong>scope negotiation</strong>, a testable engine/UI architecture
+          (<strong>28/28</strong> headless golden-vector tests and a <strong>20k-sequence fuzz</strong>),
+          a dedicated <strong>visual-fidelity</strong> review, and one rework loop.
+        </p>
+
+        <ul class="runs reveal">
+          <li><a class="run" href="https://github.com/consultwithmike/maestro/blob/main/docs/dry-runs/001-email-validator.md"><span class="run-id">001</span><span class="run-body"><h4>Email validator</h4><p>Clean happy path — security load-tested the regex for ReDoS; QA re-ran the suite itself.</p></span></a></li>
+          <li><a class="run" href="https://github.com/consultwithmike/maestro/blob/main/docs/dry-runs/002-path-traversal-rework.md"><span class="run-id">002</span><span class="run-body"><h4>Path-traversal rework</h4><p>A verifier rejects, the finding is routed back, and re-verification confirms the specific fix.</p></span></a></li>
+          <li><a class="run" href="https://github.com/consultwithmike/maestro/blob/main/docs/dry-runs/003-escalation-requirement-conflict.md"><span class="run-id">003</span><span class="run-body"><h4>Escalation on a requirement conflict</h4><p>Security and UX demand mutually exclusive things, so the conductor escalates to the human.</p></span></a></li>
+          <li><a class="run" href="https://github.com/consultwithmike/maestro/blob/main/docs/dry-runs/004-retry-ceiling.md"><span class="run-id">004</span><span class="run-body"><h4>The retry ceiling</h4><p>An unbounded requirement — the ceiling stops the loop and escalates the cause instead of looping forever.</p></span></a></li>
+          <li><a class="run" href="https://github.com/consultwithmike/maestro/blob/main/docs/dry-runs/005-calculator-app.md"><span class="run-id">005</span><span class="run-body"><h4>A real calculator app</h4><p>A 9-word ask to a shipped, self-contained working app — the screenshots above.</p></span></a></li>
+          <li><a class="run" href="https://github.com/consultwithmike/maestro/blob/main/docs/dry-runs/006-token-accounting.md"><span class="run-id">006</span><span class="run-body"><h4>Token accounting</h4><p>A best-effort token ledger written once per turn — additive schema, observability only.</p></span></a></li>
+          <li><a class="run" href="https://github.com/consultwithmike/maestro/blob/main/docs/dry-runs/007-rework-dogfood.md"><span class="run-id">007</span><span class="run-body"><h4>A rework loop, dogfooded</h4><p>Launched from a backlog item; only the two verifiers who raised findings re-check them.</p></span></a></li>
+          <li><a class="run" href="https://github.com/consultwithmike/maestro/blob/main/docs/dry-runs/008-what-if-feasibility.md"><span class="run-id">008</span><span class="run-body"><h4>A feasibility command that answers “no”</h4><p>Builds <code>/what-if</code> — and returns a well-evidenced INFEASIBLE on its own example.</p></span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ INSTALL & USE ============ -->
+    <section id="install" aria-labelledby="install-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Install &amp; use</span>
+          <h2 id="install-title">Two commands to install. One to run.</h2>
+          <p>Maestro is a Claude Code plugin. Add the marketplace, install, and hand it a task.</p>
+        </div>
+
+        <div class="install-grid">
+          <div class="code-block reveal">
+            <div class="cb-label">Install</div>
+            <div class="copy-block">
+              <button class="copy-btn" data-copy-target="#install-code" aria-label="Copy to clipboard" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+                <span class="copy-label">Copy</span>
+              </button>
+<pre id="install-code"><code><span class="comment"># add this repo as a marketplace, then install the plugin</span>
+<span class="cmd">claude plugin marketplace add consultwithmike/maestro</span>
+<span class="cmd">claude plugin install maestro</span></code></pre>
+            </div>
+          </div>
+
+          <div class="code-block reveal">
+            <div class="cb-label">Use</div>
+            <div class="copy-block">
+              <button class="copy-btn" data-copy-target="#use-code" aria-label="Copy to clipboard" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+                <span class="copy-label">Copy</span>
+              </button>
+<pre id="use-code"><code><span class="comment"># run the full pipeline on a task</span>
+<span class="cmd">/maestro Add rate limiting to the public API: 100 req/min per key, 429 on exceed.</span>
+
+<span class="comment"># other entry points</span>
+<span class="cmd">/what-if "can we split token usage into input/output?"</span>
+<span class="cmd">/maestro-status</span>
+<span class="cmd">/maestro-backlog list</span></code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="cost-note reveal">
+          <b>Cost &amp; latency, honestly.</b> Seven roles, re-invoked on rejection, means real
+          token and wall-clock cost per task — that’s the tradeoff for review-gated output. Two
+          levers keep it bounded: the retry ceiling caps worst-case loops, and the four verifiers
+          run in parallel. Because cost scales with agent-hops and retries rather than headcount,
+          this pipeline fits <b>per-task / per-PR</b> economics far better than seat-based pricing.
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen-reader announcements for copy actions -->
+    <p id="copy-status" class="sr-only" role="status" aria-live="polite"></p>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <a class="brand" href="#hero" aria-label="Maestro home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <line x1="9" y1="23" x2="24" y2="8" stroke="#F2B84B" stroke-width="2.6" stroke-linecap="round"/>
+          <circle cx="24" cy="8" r="2.6" fill="#F2B84B"/>
+          <circle cx="9" cy="23" r="1.6" fill="#7B7BF5"/>
+        </svg>
+        Maestro
+      </a>
+      <div class="foot-meta">
+        <span>MIT License</span>
+        <a href="https://github.com/consultwithmike/maestro">Source on GitHub</a>
+        <a href="https://github.com/consultwithmike/maestro/tree/main/docs/dry-runs">Dry runs</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
